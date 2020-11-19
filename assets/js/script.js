@@ -11,7 +11,14 @@ var taskFormHandler = function(){
     // create variables and package them as an object
     var taskNameInput = document.querySelector("input[name='task-name']").value;
     var taskTypeInput = document.querySelector("select[name='task-type']").value;
-    var taskDataObj = {
+
+    // check if any inputs are empty
+    if(!taskNameInput || !taskTypeInput){
+        alert("You must provide a task name and type.");
+        return false;
+    }
+    formEl.reset();    
+        var taskDataObj = {
         name: taskNameInput,
         type: taskTypeInput
     };
